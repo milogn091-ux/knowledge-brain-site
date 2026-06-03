@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Knowledge Brain Dashboard</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --brand: #2563eb;
+      --brand-soft: #dbeafe;
+      --ok: #065f46;
+      --ok-bg: #d1fae5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb 60%, #60a5fa);
+      color: white;
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: 0 10px 30px rgba(37,99,235,.18);
+    }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+    .hero p {
+      margin: 0;
+      color: rgba(255,255,255,.9);
+      font-size: 14px;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      font-size: 12px;
+    }
+    .section {
+      margin-top: 18px;
+    }
+    .section h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, .04);
+    }
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+    .topic {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .topic strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .topic span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .topic small {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--brand);
+      font-weight: 600;
+    }
+    .status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--ok-bg);
+      color: var(--ok);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+    li { margin: 6px 0; }
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+    .foot {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Knowledge Brain</h1>
+      <p>Telegram 當入口，Obsidian 當大腦。這裡是給 Wilson 手機瀏覽用的前台入口。</p>
+      <div class="badge">MVP v1 · mobile-friendly</div>
+    </section>
+
+    <section class="section">
+      <h2>現在可以去哪裡看</h2>
+      <div class="grid">
+        <a class="topic" href="#">
+          <strong>Dashboard 主入口</strong>
+          <span>看整體入口、主題、待整理區。</span>
+          <small>打開 Dashboard →</small>
+        </a>
+        <a class="topic" href="#telegram-inbox">
+          <strong>Telegram Inbox</strong>
+          <span>看剛進來、還沒完全整理的素材。</span>
+          <small>看最新素材 →</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>主題頁</h2>
+      <div class="grid">
+        <a class="topic" href="#ai-learning">
+          <strong>AI Learning</strong>
+          <span>AI 學習、模型、工具、workflow。</span>
+          <small>進主題頁 →</small>
+        </a>
+        <a class="topic" href="#product-inspiration">
+          <strong>Product Inspiration</strong>
+          <span>產品靈感、互動設計、商業模式。</span>
+          <small>進主題頁 →</small>
+        </a>
+        <a class="topic" href="#brand-design">
+          <strong>Brand Design</strong>
+          <span>品牌、視覺、內容包裝、敘事。</span>
+          <small>進主題頁 →</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>目前狀態</h2>
+      <div class="card">
+        <div class="status">已開工</div>
+        <ul>
+          <li>Telegram Knowledge Inbox 已建立</li>
+          <li>Obsidian MVP 骨架已建立</li>
+          <li>第一批測試素材已落進 Inbox</li>
+          <li>下一步：持續補強內容卡片、自動更新與主題摘要</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>我對你的建議</h2>
+      <div class="card">
+        第一版先把這個前台當成 <code>手機入口</code> 的樣板。<br/>
+        但如果你真的要在手機瀏覽器穩定打開，下一步最好把它發佈成一個可外部開啟的網址，
+        例如 GitHub Pages 或其他靜態頁面託管。
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <h2 id="telegram-inbox">Telegram Inbox</h2>
+      <div class="card">
+        這裡會顯示最新進來、尚未完全整理的素材。
+        <ul>
+          <li>Claude Code 抓不到網站資料？Firecrawl 輕鬆幫你解決</li>
+          <li>Clawdbot 正在把 AI 變成你的個人助理（這次真的不一樣）</li>
+          <li>YouTube Shorts：25zRTLluiH4</li>
+          <li>YouTube Shorts：lNHGs174qkU</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="ai-learning">AI Learning</h2>
+      <div class="card">
+        <strong>定位</strong>：AI 學習、模型、工具、workflow。
+        <ul>
+          <li>已開始收錄 YouTube 教學與工具案例</li>
+          <li>後續會補：精選筆記、每週摘要、可行應用</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="product-inspiration">Product Inspiration</h2>
+      <div class="card">
+        <strong>定位</strong>：產品靈感、互動設計、商業模式。
+        <ul>
+          <li>目前骨架已建立</li>
+          <li>等你開始丟產品案例後會逐步長出內容</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 id="brand-design">Brand Design</h2>
+      <div class="card">
+        <strong>定位</strong>：品牌、視覺、敘事、內容包裝。
+        <ul>
+          <li>目前骨架已建立</li>
+          <li>之後會整理成可直接手機閱讀的主題頁</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="foot">Knowledge Brain MVP v1</div>
+  </main>
+</body>
+</html>
