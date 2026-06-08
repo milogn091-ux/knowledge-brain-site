@@ -112,6 +112,37 @@
     }
     .quick strong { display:block; font-size:15px; margin-bottom:4px; }
     .quick span { color: rgba(255,255,255,.9); font-size: 12px; }
+    .signal-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .signal-card {
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 20px;
+      padding: 14px;
+      backdrop-filter: blur(8px);
+    }
+    .signal-card b {
+      display: block;
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 6px;
+    }
+    .signal-card strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .signal-card span {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,.9);
+    }
     .section {
       margin-top: 18px;
     }
@@ -218,6 +249,33 @@
       color: var(--muted);
       font-size:12px;
     }
+    .decision-card {
+      border-left: 4px solid var(--brand);
+    }
+    .decision-card strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .decision-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .verdict-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .mini-tag {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--brand);
+      font-size: 11px;
+      font-weight: 700;
+    }
     ul {
       margin: 8px 0 0;
       padding-left: 18px;
@@ -271,6 +329,8 @@
       .topics { grid-template-columns: repeat(3, minmax(0,1fr)); }
       .cards.dual { grid-template-columns: 1.1fr .9fr; }
       .quick-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .signal-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .verdict-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -282,94 +342,155 @@
     </div>
 
     <section class="hero" id="home">
-      <h1>Knowledge Brain</h1>
-      <p>Telegram 當入口，Obsidian 當大腦。現在先做成一個適合手機打開、像 app 首頁的前台入口。</p>
+      <h1>先看判斷，再看資料</h1>
+      <p>這不是素材倉庫首頁，而是 Wilson 每次打開手機時，先拿到最值得看的議題、背後判斷，和下一個要驗證的節點。</p>
       <div class="hero-row">
-        <div class="hero-badge">MVP v1</div>
+        <div class="hero-badge">Decision-first</div>
         <div class="hero-badge">mobile-friendly</div>
-        <div class="hero-badge">已可直接手機開啟</div>
+        <div class="hero-badge">GitHub Pages live</div>
+      </div>
+      <div class="signal-grid">
+        <div class="signal-card">
+          <b>Now</b>
+          <strong>最值得看的是 Alan 六大母框架</strong>
+          <span>因為它已經從單篇報告，壓成可反覆使用的投資觀察手冊。</span>
+        </div>
+        <div class="signal-card">
+          <b>Why</b>
+          <strong>真正值錢的是位置，不只是技術</strong>
+          <span>看公司先看入口、分發、政府、大客戶和部署慣性，再看產品亮點。</span>
+        </div>
+        <div class="signal-card">
+          <b>Next Node</b>
+          <strong>接下來要驗證平台敘事能不能兌現</strong>
+          <span>尤其是 Anthropic / Palantir 這類故事，要落到訂單、部署與預算節點。</span>
+        </div>
       </div>
       <div class="quick-grid">
-        <a class="quick" href="#inbox"><strong>Inbox</strong><span>看最新素材</span></a>
-        <a class="quick" href="#topics"><strong>Topics</strong><span>看主題頁</span></a>
-        <a class="quick" href="#status"><strong>Status</strong><span>看目前進度</span></a>
-        <a class="quick" href="#next"><strong>Next</strong><span>看下一步</span></a>
+        <a class="quick" href="#priority"><strong>Priority</strong><span>先看現在最重要</span></a>
+        <a class="quick" href="#lenses"><strong>Lenses</strong><span>直接拿框架判斷</span></a>
+        <a class="quick" href="#signals"><strong>Signals</strong><span>分辨訊號與噪音</span></a>
+        <a class="quick" href="#next"><strong>Next</strong><span>看下一驗證節點</span></a>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>總覽</h2>
-        <small>現在可用</small>
+        <h2>今日總覽</h2>
+        <small>直接可用</small>
       </div>
       <div class="stats">
-        <div class="stat"><strong>4</strong><span>已收錄素材</span></div>
-        <div class="stat"><strong>3</strong><span>主題入口</span></div>
-        <div class="stat"><strong>1</strong><span>公開前台</span></div>
+        <div class="stat"><strong>1</strong><span>首要議題</span></div>
+        <div class="stat"><strong>6</strong><span>可用母框架</span></div>
+        <div class="stat"><strong>3</strong><span>下一驗證節點</span></div>
       </div>
     </section>
 
-    <section class="section" id="topics">
+    <section class="section" id="priority">
       <div class="section-head">
-        <h2>主題頁</h2>
-        <small>從這裡開始讀</small>
+        <h2>現在最值得看</h2>
+        <small>不是最多，而是最有價值</small>
       </div>
-      <div class="topics">
-        <a class="topic" href="#ai-learning">
-          <strong>AI Learning</strong>
-          <span>AI 學習、模型、工具、workflow。</span>
-          <div class="tag">已開始收錄</div>
-          <small>進主題頁 →</small>
-        </a>
-        <a class="topic" href="#product-inspiration">
-          <strong>Product Inspiration</strong>
-          <span>產品靈感、互動設計、商業模式。</span>
-          <div class="tag">骨架已建立</div>
-          <small>進主題頁 →</small>
-        </a>
-        <a class="topic" href="#brand-design">
-          <strong>Brand Design</strong>
-          <span>品牌、視覺、內容包裝、敘事。</span>
-          <div class="tag">骨架已建立</div>
-          <small>進主題頁 →</small>
-        </a>
+      <div class="verdict-grid">
+        <div class="card decision-card">
+          <span class="mini-tag">Today</span>
+          <strong>Alan 世界觀已經值得當投資觀察主軸</strong>
+          <p>因為現在沉澱的不是單篇心得，而是能反覆套用在新題材上的判斷骨架。</p>
+        </div>
+        <div class="card decision-card">
+          <span class="mini-tag">Why it matters</span>
+          <strong>市場常替敘事付錢，但最後會被驗證節點重估</strong>
+          <p>所以首頁應該優先告訴你哪個故事在漲、哪個節點會打臉或放大它。</p>
+        </div>
       </div>
     </section>
 
     <section class="section cards dual">
-      <div class="card" id="inbox">
+      <div class="card" id="lenses">
         <div class="section-head" style="margin:0 0 8px;">
-          <h2>Telegram Inbox</h2>
-          <small>最新素材</small>
+          <h2>六大母框架</h2>
+          <small>直接拿來看世界</small>
         </div>
         <div class="list">
           <div class="list-item">
-            <strong>Claude Code 抓不到網站資料？Firecrawl 輕鬆幫你解決</strong>
-            <span>YouTube · 已進 Inbox · AI Learning</span>
+            <strong>影子金融 / 流動性錯配</strong>
+            <span>先看資金鏈哪裡最脆弱，再看誰表面上還在成長。</span>
           </div>
           <div class="list-item">
-            <strong>Clawdbot 正在把 AI 變成你的個人助理（這次真的不一樣）</strong>
-            <span>YouTube · 已進 Inbox · AI Learning</span>
+            <strong>政策事件 → 產業受益地圖</strong>
+            <span>不是只看政策方向，而是誰先吃到預算、補貼、採購與供應鏈紅利。</span>
           </div>
           <div class="list-item">
-            <strong>YouTube Shorts：25zRTLluiH4</strong>
-            <span>Shorts · 待補摘要</span>
+            <strong>AI 效率紅利 vs 白領替代</strong>
+            <span>分辨公司是在賣工具，還是在賣「結果 / 勞動替代」。</span>
           </div>
           <div class="list-item">
-            <strong>YouTube Shorts：lNHGs174qkU</strong>
-            <span>Shorts · 待補摘要</span>
+            <strong>中介節點 / 傳導鏈脆弱點</strong>
+            <span>真正容易出現超額報酬的，常是中介層而不是最上游的大敘事。</span>
+          </div>
+          <div class="list-item">
+            <strong>平台位置 / 敘事重估</strong>
+            <span>先問它卡住了哪個位置，再問市場是不是把它當成更高級的故事來定價。</span>
+          </div>
+          <div class="list-item">
+            <strong>安全敘事 / 道德敘事也是競爭策略</strong>
+            <span>很多看似價值觀表述，實際是在抬門檻、重寫遊戲規則。</span>
           </div>
         </div>
       </div>
 
-      <div class="card" id="status">
-        <h2 style="margin:0 0 10px; font-size:18px;">目前狀態</h2>
-        <div class="status">已開工</div>
+      <div class="card" id="signals">
+        <h2 style="margin:0 0 10px; font-size:18px;">高價值訊號</h2>
+        <div class="status">先看這些</div>
         <ul>
-          <li>Telegram Knowledge Inbox 已建立</li>
-          <li>Obsidian MVP 骨架已建立</li>
-          <li>第一批測試素材已落進 Inbox</li>
-          <li>手機前台入口已上線</li>
+          <li>市場正在替哪個劇本付錢，而不是哪家公司最會講故事</li>
+          <li>誰掌握位置優勢：入口、分發、政府、大客戶、部署慣性</li>
+          <li>下一個驗證節點是財報、訂單、13F、預算還是部署進度</li>
+          <li>哪些只是短噪音：單日情緒、人物喊話、沒有驗證點的熱詞</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="topics">
+      <div class="card">
+        <div class="section-head" style="margin:0 0 8px;">
+          <h2>主題入口</h2>
+          <small>從判斷延伸閱讀</small>
+        </div>
+        <div class="topics">
+          <a class="topic" href="#alan-view">
+            <strong>Alan Worldview</strong>
+            <span>把單篇報告壓成長期可用的投資觀察框架。</span>
+            <div class="tag">優先閱讀</div>
+            <small>先讀這個 →</small>
+          </a>
+          <a class="topic" href="#ai-learning">
+            <strong>AI Learning</strong>
+            <span>AI 工具、agent workflow、資料取得瓶頸。</span>
+            <div class="tag">持續增長</div>
+            <small>看工具層 →</small>
+          </a>
+          <a class="topic" href="#product-inspiration">
+            <strong>Product Inspiration</strong>
+            <span>產品靈感、互動設計、商業模式。</span>
+            <div class="tag">待補案例</div>
+            <small>等更多素材 →</small>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="alan-view">
+      <div class="card">
+        <div class="section-head" style="margin:0 0 8px;">
+          <h2>Alan Worldview</h2>
+          <small>目前最有槓桿的內容</small>
+        </div>
+        <p style="margin:0; color:var(--muted);">一句話濃縮：之後看題材，不先問誰最厲害，而是固定看位置、護城河、定價故事、驗證節點、資本流向。</p>
+        <ul>
+          <li>已從 6 份 keeper 報告壓成一頁六大母框架</li>
+          <li>後續每篇 Alan 報告已接入 `Worldview Lens` 區塊</li>
+          <li>這一層比單篇摘要更值得長期保留，因為它能直接影響之後的判斷</li>
         </ul>
       </div>
     </section>
@@ -378,27 +499,14 @@
       <div class="card">
         <div class="section-head" style="margin:0 0 8px;">
           <h2>AI Learning</h2>
-          <small>已開始收錄</small>
+          <small>第二優先主題</small>
         </div>
-        <p style="margin:0; color:var(--muted);">定位：AI 學習、模型、工具、workflow。</p>
+        <p style="margin:0; color:var(--muted);">目前收斂出的不是「工具清單」，而是 agent 真的會卡在哪裡，以及哪些 infra 值得補。</p>
         <ul>
-          <li>已開始收錄 YouTube 教學與工具案例</li>
-          <li>這週已先收斂出 3 個重點：資料取得是 agent 真瓶頸、工具層補強很重要、AI Learning 很適合先當第一個成長中的主題 brain</li>
+          <li>資料取得仍是 agent workflow 的真瓶頸</li>
+          <li>像 Firecrawl 這類 crawler infra，對 research automation 有直接價值</li>
+          <li>這條主題值得持續長，但目前優先級仍低於 Alan 世界觀框架</li>
         </ul>
-        <div class="list" style="margin-top:12px;">
-          <div class="list-item">
-            <strong>已收斂重點 1</strong>
-            <span>Agent 常卡住不是因為模型太弱，而是拿不到網站或外部資料。</span>
-          </div>
-          <div class="list-item">
-            <strong>已收斂重點 2</strong>
-            <span>Firecrawl 這類 crawler infra，對 research automation 和 knowledge intake 很有直接價值。</span>
-          </div>
-          <div class="list-item">
-            <strong>已收斂重點 3</strong>
-            <span>目前丟進來的素材明顯偏 AI 工具與 workflow，代表 AI Learning 適合先長內容。</span>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -406,13 +514,9 @@
       <div class="card">
         <div class="section-head" style="margin:0 0 8px;">
           <h2>Product Inspiration</h2>
-          <small>待長出內容</small>
+          <small>待補強</small>
         </div>
-        <p style="margin:0; color:var(--muted);">定位：產品靈感、互動設計、商業模式。</p>
-        <ul>
-          <li>目前骨架已建立</li>
-          <li>等你開始丟產品案例後會逐步長出內容</li>
-        </ul>
+        <p style="margin:0; color:var(--muted);">這區先保留，但不硬塞內容。等真的有高價值案例再長，避免首頁被骨架和空卡片稀釋。</p>
       </div>
     </section>
 
@@ -420,12 +524,31 @@
       <div class="card">
         <div class="section-head" style="margin:0 0 8px;">
           <h2>Brand Design</h2>
-          <small>待長出內容</small>
+          <small>待補強</small>
         </div>
-        <p style="margin:0; color:var(--muted);">定位：品牌、視覺、敘事、內容包裝。</p>
-        <ul>
-          <li>目前骨架已建立</li>
-          <li>之後會整理成可直接手機閱讀的主題頁</li>
+        <p style="margin:0; color:var(--muted);">之後應該放可直接拿來參考的敘事、視覺與包裝判斷，而不是先堆名詞。</p>
+      </div>
+    </section>
+
+    <section class="section" id="inbox">
+      <div class="card">
+        <div class="section-head" style="margin:0 0 8px;">
+          <h2>素材池</h2>
+          <small>只保留值得往上提煉的</small>
+        </div>
+        <div class="list">
+          <div class="list-item">
+            <strong>Claude Code 抓不到網站資料？Firecrawl 輕鬆幫你解決</strong>
+            <span>YouTube · AI Learning · 值得提煉為資料取得 / crawler infra 判斷</span>
+          </div>
+          <div class="list-item">
+            <strong>Clawdbot 正在把 AI 變成你的個人助理</strong>
+            <span>YouTube · AI Learning · 值得提煉為 agent workflow 與任務接住能力</span>
+          </div>
+          <div class="list-item">
+            <strong>YouTube Shorts：25zRTLluiH4 / lNHGs174qkU</strong>
+            <span>短素材 · 先不占首頁黃金位置，等判定是否值得升級</span>
+          </div>
         </ul>
       </div>
     </section>
@@ -433,18 +556,18 @@
     <section class="section" id="next">
       <div class="card">
         <div class="section-head" style="margin:0 0 8px;">
-          <h2>下一步</h2>
-          <small>我會繼續補</small>
+          <h2>下一驗證節點</h2>
+          <small>不是待辦，而是要驗證什麼</small>
         </div>
         <ul>
-          <li>把 Telegram 新素材更穩定地同步進 Inbox</li>
-          <li>替主題頁補真正的精選卡片與摘要</li>
-          <li>讓首頁可以自動更新，而不是手動維護</li>
+          <li>驗證 `平台位置` 故事能不能真的落到訂單、部署與預算，而不是只停在人物敘事</li>
+          <li>把 Telegram 新素材先分類成 `值得提煉` 和 `只是噪音`，不要全部擠上首頁</li>
+          <li>後續再把首頁接成自動更新，但前提是輸出的內容密度先成立</li>
         </ul>
       </div>
     </section>
 
-    <div class="foot">Knowledge Brain MVP v1 · app-style home</div>
+    <div class="foot">Knowledge Brain v2 · decision-first mobile home</div>
   </main>
 
   <nav class="bottom-nav" aria-label="Bottom navigation">
